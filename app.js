@@ -20,6 +20,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//Make sure to pull this from .env its shown here to show authSource
+//to access mongo in the container. 
 mongoose.connect("mongodb://localhost:27017/aliens", {
 authSource: "admin",
 user: "admin",
